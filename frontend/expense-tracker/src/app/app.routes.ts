@@ -12,5 +12,10 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./features/expenses/routes').then((m) => m.EXPENSES_ROUTES),
   },
+  {
+    path: 'income',
+    loadChildren: () =>
+      import('./features/income/routes').then((m) => m.INCOME_ROUTES),
+  },
   { path: '**', redirectTo: '/dashboard' },
 ];

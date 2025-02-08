@@ -1,0 +1,49 @@
+
+<div class="container">
+    <div class="row align-items-center">
+      <div class="col">
+        <h1 class="mb-0">New Income</h1>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-primary" (click)="routeBack()">Back</button>
+      </div>
+    </div>
+  </div>
+<hr>
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-12 col-md-6 col-lg-5">
+  <div class="card shadow">
+    <div class="card-body p-4">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input formControlName="title" type="text" class="form-control" id="title" />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input formControlName="description" type="text" class="form-control" id="description" />
+        </div>
+        <!-- <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <select class="form-select" formControlName="category">
+            @for(category of categories; track category._id){
+            <option [value]="category._id">{{category.title}}</option>
+            }
+          </select>
+        </div> -->
+        <div class="mb-3">
+          <label for="date" class="form-label">Date</label>
+          <input formControlName="date" data-provide=datepicker type="text" class="form-control" id="date" />
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Amount</label>
+          <input formControlName="amount" type="number" class="form-control" id="amount" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
