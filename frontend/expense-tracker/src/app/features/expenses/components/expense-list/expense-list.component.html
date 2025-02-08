@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="row align-items-center">
+    <div class="col">
+      <h1 class="mb-0">Expenses</h1>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary" (click)="navigateToNewExpense()">New Expense</button>
+    </div>
+  </div>
+</div>
+<hr />
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Category</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(expense of expenses; track expense.id){
+    <tr>
+      <th scope="row">{{ expense.id }}</th>
+      <td>{{ expense.title }}</td>
+      <td>{{ expense.description }}</td>
+      <td>{{ expense.category?.title }}</td>
+      <td>{{ expense.amount }}</td>
+      <td>{{ expense.date }}</td>
+      <td mx-auto><a href=""><i class="bi bi-pencil-square"></i></a><a href=""><i class="bi bi-trash3-fill"></i></a></td>
+    </tr>
+    }
+  </tbody>
+</table>

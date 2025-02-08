@@ -1,0 +1,52 @@
+
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <a href="/" class="d-flex align-items-center pt-3 pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+              <span class="fs-3 d-none d-sm-inline logo">Spendly</span>
+            </a>
+              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                  <li>
+                      <a routerLink="dashboard" data-bs-toggle="collapse" class="d-flex align-items-center nav-link px-0 align-middle">
+                          <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                  </li>
+                  <li>
+                      <a routerLink="expenses" class="d-flex align-items-center nav-link px-0 align-middle">
+                         <i class="fs-4 bi bi-credit-card"></i> <span class="ms-1 d-none d-sm-inline">Expenses</span></a>
+                  </li>
+                  <li>
+                      <a href="#menu3" data-bs-toggle="collapse" class="d-flex align-items-center nav-link px-0 align-middle ">
+                         <i class="fs-4 bi bi-sliders"></i> <span class="ms-1 d-none d-sm-inline">Settings</span></a>
+                  </li>
+                  <li>
+                      <a href="#" class="d-flex align-items-center nav-link px-0 align-middle">
+                          <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Support</span> </a>
+                  </li>
+              </ul>
+              <hr>
+              <div class="dropdown pb-4">
+                  <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="https://cdn.prod.website-files.com/6365d860c7b7a7191055eb8a/65a75130dc955d33b7d36e5b_Katherine%20Moss-p-500.jpg" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                      <span class="d-none d-sm-inline mx-1">dostoevsky</span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                      <li><a class="dropdown-item" href="#">Settings</a></li>
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="col py-3">
+          <router-outlet></router-outlet>
+           <!-- <app-parent></app-parent> -->
+            <!-- <app-comp2></app-comp2> -->
+      </div>
+  </div>
+</div>
+
+
