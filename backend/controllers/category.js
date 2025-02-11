@@ -12,7 +12,7 @@ exports.addCategory = async (req, res) => {
     }
     await category.save();
     return res.status(200).json({ message: "Category added" });
-  } catch (err) {
+  } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
