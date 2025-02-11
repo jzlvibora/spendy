@@ -2,6 +2,7 @@ const {
   addIncome,
   getIncomes,
   deleteIncome,
+  getTotalIncome,
 } = require("../controllers/income");
 const {
   addExpense,
@@ -22,6 +23,7 @@ router.get("/", (req, res) => {
 router
   .post("/income", addIncome)
   .get("/income/all", getIncomes)
+  .get("/income/total",getTotalIncome)
   .delete("/income/:id", deleteIncome)
   .post("/expense", addExpense)
   .get("/expense/all", getExpenses)
