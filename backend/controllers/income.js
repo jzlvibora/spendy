@@ -25,9 +25,21 @@ exports.addIncome = async (req, res) => {
   }
 };
 
-exports.getIncomes = async (req, res) => {
+exports.getIncome = async (req, res) => {
+  const { startDate, endDate } = req.query;
+  let filter = {};
+
+  if (startDate && endDate) {
+    filter.date = {
+      $gte: new Date(startDate),
+      $lte: new Date(endDate),
+    };
+  }
+
+  console.log(filter);
+
   try {
-    const incomes = await IncomeSchema.find().sort({ createdAt: -1 });
+    const incomes = await IncomeSchema.find(filter).sort({ createdAt: -1 });
     return res.status(200).json(incomes);
   } catch (error) {
     return res.status(500).json({ message: error.message });

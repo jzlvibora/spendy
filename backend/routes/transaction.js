@@ -1,6 +1,6 @@
 const {
   addIncome,
-  getIncomes,
+  getIncome,
   deleteIncome,
   getTotalIncome,
 } = require("../controllers/income");
@@ -22,14 +22,14 @@ router.get("/", (req, res) => {
 
 router
   .post("/income", addIncome)
-  .get("/income/all", getIncomes)
+  .get("/income", getIncome)
   .get("/income/total",getTotalIncome)
   .delete("/income/:id", deleteIncome)
   .post("/expense", addExpense)
-  .get("/expense/all", getExpenses)
+  .get("/expense", getExpenses)
   .delete("/expense/:id", deleteExpense)
   .post("/category", addCategory)
-  .get("/category/all", getCategories)
+  .get("/category", getCategories)
   .delete("/category/:id", deleteCategory);
 
 module.exports = router;
