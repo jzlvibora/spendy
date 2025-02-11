@@ -36,8 +36,22 @@ exports.addExpense = async (req, res) => {
 };
 
 exports.getExpenses = async (req, res) => {
+  const { startDate, endDate, categoryId } = req.query;
+  let filter = {};
+
+  if (startDate && endDate) {
+    filter.date = {
+      $gte: new Date(startDate),
+      $lte: new Date(endDate),
+    };
+  }
+
+  if (categoryId && categoryId !== "All") {
+    filter.category = categoryId;
+  }
+
   try {
-    const expenses = await ExpenseSchema.find()
+    const expenses = await ExpenseSchema.find(filter)
       .populate("category", "title")
       .sort({ createdAt: -1 });
     res.status(200).json(expenses);
